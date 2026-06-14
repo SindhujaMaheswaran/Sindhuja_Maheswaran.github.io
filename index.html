@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sindhuja Maheswaran | Strategic Finance & Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900;1,300;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a0f1e;
+      --ink-soft: #3a4560;
+      --ink-muted: #7a8499;
+      --rule: #e2e6f0;
+      --bg: #f5f7ff;
+      --white: #ffffff;
+      --accent: #2563eb;
+      --accent2: #7c3aed;
+      --accent-light: #eff2ff;
+      --green: #059669;
+      --green-light: #d1fae5;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(245,247,255,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; }
+    .nav-logo { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; color: var(--accent); letter-spacing: 0.08em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.75rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 420px; gap: 0; padding-top: 56px; }
+    .hero-left { padding: 6rem 4rem 4rem; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--rule); }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); border: 1px solid #c7d7fd; padding: 0.3rem 0.8rem; border-radius: 999px; margin-bottom: 2rem; width: fit-content; }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero-name { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 900; line-height: 1.0; color: var(--ink); margin-bottom: 1rem; }
+    .hero-name .line2 { font-style: italic; font-weight: 300; color: var(--accent); display: block; }
+    .hero-role { font-size: 1rem; color: var(--ink-soft); font-weight: 400; margin-bottom: 2.5rem; line-height: 1.5; }
+    .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ink); color: white; padding: 0.75rem 1.75rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1.5px solid var(--rule); color: var(--ink-soft); padding: 0.75rem 1.75rem; border-radius: 8px; font-size: 0.82rem; font-weight: 500; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-numbers { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .hero-num { padding: 1.25rem 1rem; text-align: center; border-right: 1px solid var(--rule); }
+    .hero-num:last-child { border-right: none; }
+    .hero-num .n { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: var(--accent); display: block; line-height: 1; }
+    .hero-num .l { font-size: 0.65rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; display: block; }
+
+    .hero-right { display: flex; flex-direction: column; background: var(--white); }
+    .photo-section { flex: 0 0 auto; position: relative; overflow: hidden; background: linear-gradient(145deg, #e8effe 0%, #ede9fe 100%); display: flex; align-items: center; justify-content: center; min-height: 360px; }
+    .photo-section img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .photo-avatar { width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 3.2rem; font-weight: 900; color: white; box-shadow: 0 20px 60px rgba(37,99,235,0.3); position: relative; z-index: 1; }
+    .photo-label { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; background: rgba(0,0,0,0.15); padding: 0.3rem 0.8rem; border-radius: 999px; white-space: nowrap; }
+
+    .hook-section { flex: 1; padding: 1.75rem; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 0.75rem; }
+    .hook-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); }
+    .hook-card { background: var(--bg); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; border-left: 3px solid var(--rule); transition: border-color 0.2s; }
+    .hook-card.blue { border-left-color: var(--accent); }
+    .hook-card.purple { border-left-color: var(--accent2); }
+    .hook-card.green { border-left-color: var(--green); }
+    .hook-card-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.35rem; }
+    .hook-card-text { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.55; }
+    .hook-card-text strong { color: var(--ink); font-weight: 600; }
+
+    .story-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; border-top: 1px solid var(--rule); }
+    .story-grid { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; align-items: start; }
+    .story-sticky { position: sticky; top: 80px; }
+    .section-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .section-heading { font-family: var(--serif); font-weight: 900; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--ink); line-height: 1.15; margin-bottom: 1rem; }
+    .section-sub { font-size: 0.86rem; color: var(--ink-muted); line-height: 1.7; }
+
+    .exp-list { display: flex; flex-direction: column; gap: 2rem; }
+    .exp-item { background: var(--white); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+    .exp-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 1.4rem 1.6rem 1.1rem; border-bottom: 1px solid var(--rule); }
+    .exp-co { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.15rem; }
+    .exp-title { font-size: 0.82rem; color: var(--ink-soft); }
+    .exp-meta-right { text-align: right; flex-shrink: 0; margin-left: 1rem; }
+    .exp-period { font-family: var(--mono); font-size: 0.65rem; color: var(--ink-muted); display: block; margin-bottom: 0.35rem; }
+    .badge { display: inline-block; font-size: 0.6rem; font-weight: 700; padding: 0.18rem 0.6rem; border-radius: 999px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .badge-green { background: var(--green-light); color: var(--green); }
+    .badge-blue { background: var(--accent-light); color: var(--accent); }
+    .badge-purple { background: #ede9fe; color: var(--accent2); }
+    .exp-body { padding: 1.4rem 1.6rem; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .exp-bullets li { font-size: 0.86rem; color: var(--ink-soft); padding-left: 1.2rem; position: relative; line-height: 1.65; }
+    .exp-bullets li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.4; }
+    .hl { font-weight: 600; color: var(--ink); }
+    .exp-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.9rem 1.6rem; border-top: 1px solid var(--rule); background: var(--bg); }
+    .exp-chip { font-family: var(--mono); font-size: 0.62rem; padding: 0.18rem 0.55rem; border-radius: 4px; background: var(--white); border: 1px solid var(--rule); color: var(--ink-muted); }
+
+    .skills-section { background: var(--ink); color: white; padding: 5rem 2.5rem; }
+    .skills-inner { max-width: 1100px; margin: 0 auto; }
+    .skills-section .section-label { color: #818cf8; }
+    .skills-section .section-heading { color: white; margin-bottom: 2.5rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .skill-block { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; transition: background 0.2s; }
+    .skill-block:hover { background: rgba(255,255,255,0.08); }
+    .skill-block-title { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag { font-family: var(--mono); font-size: 0.7rem; padding: 0.22rem 0.6rem; border-radius: 4px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.65); }
+
+    .projects-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; border-top: 1px solid var(--rule); }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .project-card { background: var(--white); border: 1px solid var(--rule); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.7rem; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(37,99,235,0.1); border-color: var(--accent); }
+    .project-tag { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 0.18rem 0.6rem; border-radius: 4px; width: fit-content; }
+    .project-title { font-size: 0.96rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
+    .project-desc { font-size: 0.83rem; color: var(--ink-soft); line-height: 1.65; flex: 1; }
+    .project-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem; }
+    .project-chip { font-family: var(--mono); font-size: 0.66rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: 4px; background: var(--green-light); color: var(--green); }
+
+    .contact-section { border-top: 1px solid var(--rule); padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: start; }
+    .contact-headline { font-family: var(--serif); font-weight: 900; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--ink); line-height: 1.1; margin-bottom: 1.25rem; }
+    .contact-headline em { font-style: italic; color: var(--accent); font-weight: 300; }
+    .contact-sub { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.65rem; }
+    .contact-link { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; padding: 0.8rem 1rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--white); transition: border-color 0.2s, color 0.2s, transform 0.15s; }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(3px); }
+    .open-to-card { background: linear-gradient(135deg, #0a0f1e 0%, #1e3a8a 100%); border-radius: 14px; padding: 2rem; color: white; }
+    .open-to-title { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+    .open-to-list { display: flex; flex-direction: column; gap: 0.65rem; }
+    .open-to-item { display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: rgba(255,255,255,0.82); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-g { background: #34d399; }
+    .dot-b { background: #60a5fa; }
+
+    footer { border-top: 1px solid var(--rule); padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+    footer span { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-muted); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 4rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .story-grid { grid-template-columns: 1fr; }
+      .story-sticky { position: static; }
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1.25rem; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">sindhuja.m</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Available for new roles</div>
+    <h1 class="hero-name">Sindhuja<span class="line2">Maheswaran</span></h1>
+    <p class="hero-role">Strategic Finance &amp; Revenue Analytics &nbsp;&middot;&nbsp; 6+ Years &nbsp;&middot;&nbsp; Open to Relocation</p>
+    <div class="hero-ctas">
+      <a href="Sindhuja_Maheswaran_Resume.pdf" class="btn-primary" download>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-numbers">
+      <div class="hero-num"><span class="n">$11.3B</span><span class="l">Portfolio</span></div>
+      <div class="hero-num"><span class="n">18+</span><span class="l">M&amp;A Deals</span></div>
+      <div class="hero-num"><span class="n">85%</span><span class="l">Time Saved</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-section">
+      <!--
+        HOW TO ADD YOUR PHOTO:
+        1. Upload your photo to your GitHub repo, name it: photo.jpg
+        2. Delete the line with class="photo-avatar" below
+        3. Remove the comment tags around the img line below
+      -->
+      <!-- <img src="photo.jpg" alt="Sindhuja Maheswaran" /> -->
+      <div class="photo-avatar">SM</div>
+      <span class="photo-label">Upload photo.jpg to GitHub repo</span>
+    </div>
+
+    <div class="hook-section">
+      <p class="hook-label">Why I think differently about finance</p>
+
+      <div class="hook-card blue">
+        <p class="hook-card-label">The $420K problem nobody caught</p>
+        <p class="hook-card-text">At DaVita I found <strong>$420K in gaps between what we predicted and what actually happened</strong>, traced it to enrollment behavior, and rebuilt the model. Most analysts report the variance. I explain it.</p>
+      </div>
+
+      <div class="hook-card purple">
+        <p class="hook-card-label">Turned a Walmart channel into a growth story</p>
+        <p class="hook-card-text">At NYDEC, raw license data sat unused in a portal. I modeled the pricing curve and found the gap. Result: <strong>17% channel revenue growth and 4.5% lift in license value</strong> from one analytical reframe.</p>
+      </div>
+
+      <div class="hook-card green">
+        <p class="hook-card-label">Finance that ships decisions, not decks</p>
+        <p class="hook-card-text">Across 18+ M&amp;A deals I learned: <strong>a model only matters if it moves a decision</strong>. I build for outcomes. That is the difference between FP&amp;A and Strategic Finance.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="story-section" id="experience">
+  <div class="story-grid">
+    <div class="story-sticky">
+      <p class="section-label">Career Timeline</p>
+      <h2 class="section-heading">Where I have made an impact</h2>
+      <p class="section-sub">Investment banking taught me how to model deals. NYDEC taught me digital commerce and automation. DaVita gave me an $11.3B portfolio to run.</p>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-co">DaVita</p>
+            <p class="exp-title">Sr. Financial Analyst &mdash; Revenue Analytics</p>
+          </div>
+          <div class="exp-meta-right">
+            <span class="exp-period">Mar 2026 &mdash; Present</span>
+            <span class="badge badge-green">Current</span>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Own long-term forecasting frameworks across <span class="hl">5 healthcare marketplace plans</span> within an <span class="hl">$11.3B portfolio</span>, informing pricing strategy, growth targets, and resource allocation decisions.</li>
+            <li>Identified growth opportunities through competitor analyses and market expansion modeling, influencing <span class="hl">$1.4M in strategic funding decisions.</span></li>
+            <li>Modeled member behavior and demand patterns, uncovering <span class="hl">$420K in forecast-to-actual variances</span> and improving planning accuracy.</li>
+            <li>Evaluated commercial opportunities and strategic partnerships by quantifying revenue impacts, financial viability, and user behavior outcomes.</li>
+          </ul>
+        </div>
+        <div class="exp-chips">
+          <span class="exp-chip">Revenue Forecasting</span><span class="exp-chip">Pricing Strategy</span><span class="exp-chip">Market Analysis</span><span class="exp-chip">Healthcare Marketplace</span><span class="exp-chip">Anaplan</span>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-co">NYDEC</p>
+            <p class="exp-title">Business System Analyst &mdash; Finance Data Management</p>
+          </div>
+          <div class="exp-meta-right">
+            <span class="exp-period">Apr 2025 &mdash; Feb 2026</span>
+            <span class="badge badge-blue">Analytics</span>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Analyzed digital license sales through the Walmart retail channel, identifying demand patterns supporting <span class="hl">17% channel revenue growth.</span></li>
+            <li>Modeled pricing trends using Python and Excel, driving a <span class="hl">4.5% increase in license value.</span></li>
+            <li>Developed 15+ business cases and automated Python/VBA reporting workflows, reducing quarterly close effort by <span class="hl">85%.</span></li>
+            <li>Built investment business case for a digital payment platform, improving project delivery timelines by <span class="hl">20%.</span></li>
+          </ul>
+        </div>
+        <div class="exp-chips">
+          <span class="exp-chip">Python</span><span class="exp-chip">VBA</span><span class="exp-chip">Digital Commerce</span><span class="exp-chip">Pricing Models</span><span class="exp-chip">Business Cases</span>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div>
+            <p class="exp-co">7FinCorp Group</p>
+            <p class="exp-title">Sr. Financial Analyst &mdash; Investment Banking Advisory</p>
+          </div>
+          <div class="exp-meta-right">
+            <span class="exp-period">Oct 2018 &mdash; Jul 2022</span>
+            <span class="badge badge-purple">IB Advisory</span>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Owned financial modeling and investment evaluation across <span class="hl">18+ M&amp;A and ECM transactions</span>, contributing to <span class="hl">$3M in executed revenue.</span></li>
+            <li>Built deal performance reporting and revenue analytics infrastructure using SQL and Power BI, reducing reporting effort by <span class="hl">60%.</span></li>
+            <li>Led unit economics, pricing, and break-even assessments, identifying <span class="hl">$150K in unrecovered vendor costs</span> across 18 mandates.</li>
+          </ul>
+        </div>
+        <div class="exp-chips">
+          <span class="exp-chip">M&amp;A Modeling</span><span class="exp-chip">SQL</span><span class="exp-chip">Power BI</span><span class="exp-chip">ECM</span><span class="exp-chip">Unit Economics</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="skills-section" id="skills">
+  <div class="skills-inner">
+    <p class="section-label">Technical Stack</p>
+    <h2 class="section-heading">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-block reveal">
+        <p class="skill-block-title">Analytics Tools</p>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Anaplan</span><span class="skill-tag">Hyperion</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <p class="skill-block-title">Finance &amp; Strategy</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Revenue Forecasting</span><span class="skill-tag">Demand Planning</span><span class="skill-tag">Pricing Strategy</span><span class="skill-tag">Unit Economics</span><span class="skill-tag">Long-Range Planning</span><span class="skill-tag">M&amp;A Modeling</span>
+        </div>
+      </div>
+      <div class="skill-block reveal">
+        <p class="skill-block-title">Business Partnership</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Executive Reporting</span><span class="skill-tag">Stakeholder Alignment</span><span class="skill-tag">Business Cases</span><span class="skill-tag">ROI Evaluation</span><span class="skill-tag">KPI Frameworks</span><span class="skill-tag">Cross-functional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="projects-section" id="projects">
+  <p class="section-label">Selected Work</p>
+  <h2 class="section-heading" style="margin-bottom:2.5rem;">Projects &amp; Impact</h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <span class="project-tag">Forecasting</span>
+      <h3 class="project-title">$11.3B Multi-Marketplace Forecasting Framework</h3>
+      <p class="project-desc">Built long-term forecasting models across 5 healthcare marketplace plans at DaVita. Converted enrollment trends and utilization benchmarks into financial targets operational teams execute against.</p>
+      <div class="project-chips"><span class="project-chip">$11.3B Portfolio</span><span class="project-chip">$420K Variance Found</span><span class="project-chip">5 Marketplaces</span></div>
+    </div>
+    <div class="project-card reveal">
+      <span class="project-tag">Revenue Analytics</span>
+      <h3 class="project-title">Walmart Channel Demand &amp; Pricing Analysis</h3>
+      <p class="project-desc">Extracted digital license sales data, modeled pricing curves and demand patterns. Identified underpriced segments and informed a channel strategy that drove significant growth.</p>
+      <div class="project-chips"><span class="project-chip">17% Revenue Growth</span><span class="project-chip">4.5% License Value Lift</span></div>
+    </div>
+    <div class="project-card reveal">
+      <span class="project-tag">Automation</span>
+      <h3 class="project-title">Finance Reporting Automation (Python + VBA)</h3>
+      <p class="project-desc">Redesigned quarterly close process from scratch. Built Python and VBA pipelines eliminating manual consolidation across 5 business units, freeing teams for higher-value analysis.</p>
+      <div class="project-chips"><span class="project-chip">85% Effort Reduction</span><span class="project-chip">15+ Business Cases</span></div>
+    </div>
+    <div class="project-card reveal">
+      <span class="project-tag">Investment Banking</span>
+      <h3 class="project-title">M&amp;A Financial Modeling &amp; Deal Analytics</h3>
+      <p class="project-desc">Led end-to-end financial modeling across 18+ M&A and ECM transactions. Built SQL and Power BI infrastructure replacing manual deal reporting, directly improving leadership decision speed.</p>
+      <div class="project-chips"><span class="project-chip">18+ Transactions</span><span class="project-chip">$3M Revenue</span><span class="project-chip">60% Reporting Cut</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-headline">Let's build<br><em>something</em><br>together.</h2>
+      <p class="contact-sub">Open to Finance Business Partner, Operations Finance, and Revenue Analytics roles at high-growth tech, healthcare, and financial services companies. H1B sponsorship required.</p>
+      <div class="contact-links">
+        <a href="mailto:sindhuja.maheswaran2211@gmail.com" class="contact-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          sindhuja.maheswaran2211@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/sindhuja-maheswaran" target="_blank" class="contact-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn Profile
+        </a>
+        <a href="Sindhuja_Maheswaran_Resume.pdf" class="contact-link" download>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+    <div class="open-to-card">
+      <p class="open-to-title">Open To</p>
+      <div class="open-to-list">
+        <div class="open-to-item"><span class="dot dot-g"></span>Finance Business Partner</div>
+        <div class="open-to-item"><span class="dot dot-g"></span>Operations Finance Analyst</div>
+        <div class="open-to-item"><span class="dot dot-g"></span>Revenue Analytics / FP&amp;A</div>
+        <div class="open-to-item"><span class="dot dot-g"></span>Strategy &amp; Analytics</div>
+        <div class="open-to-item"><span class="dot dot-b"></span>Seattle / NYC / Dallas / Chicago</div>
+        <div class="open-to-item"><span class="dot dot-b"></span>Open to Relocation across US</div>
+        <div class="open-to-item"><span class="dot dot-b"></span>H1B Sponsorship Required</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Sindhuja Maheswaran &mdash; Strategic Finance &amp; Analytics</span>
+  <span>Albany, NY &mdash; Open to Relocation</span>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
