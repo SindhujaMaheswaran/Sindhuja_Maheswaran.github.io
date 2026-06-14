@@ -9,17 +9,16 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --black:#060810;--white:#f0f2ff;--dim:#8892a4;--rule:rgba(255,255,255,0.07);
-  --accent:#4f6ef7;--accent2:#a78bfa;--green:#10b981;--amber:#f59e0b;--red:#f43f5e;
+  --accent:#4f6ef7;--accent2:#a78bfa;--green:#10b981;--amber:#f59e0b;
   --display:'Syne',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* CURSOR */
-.glow{pointer-events:none;position:fixed;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(79,110,247,0.1) 0%,transparent 65%);transform:translate(-50%,-50%);transition:left 0.2s ease,top 0.2s ease;z-index:0;top:50%;left:50%}
+.glow{pointer-events:none;position:fixed;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(79,110,247,0.09) 0%,transparent 65%);transform:translate(-50%,-50%);transition:left 0.2s ease,top 0.2s ease;z-index:0;top:50%;left:50%}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(6,8,16,0.75);backdrop-filter:blur(24px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:rgba(6,8,16,0.8);backdrop-filter:blur(24px)}
 .nav-brand{font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:0.7rem;font-weight:500;color:var(--dim);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
@@ -27,43 +26,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;d
 .nav-cta{font-family:var(--mono);font-size:0.65rem;color:var(--accent);border:1px solid rgba(79,110,247,0.35);padding:0.38rem 1rem;border-radius:4px;text-decoration:none;letter-spacing:0.06em;transition:all 0.2s}
 .nav-cta:hover{background:var(--accent);color:var(--white)}
 
-/* ── HERO ── */
+/* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:80px 3rem 4rem;overflow:hidden;z-index:1}
-.hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(79,110,247,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(79,110,247,0.035) 1px,transparent 1px);background-size:64px 64px}
-.hero-orb1{position:absolute;top:-15%;right:-8%;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(79,110,247,0.13) 0%,transparent 60%);pointer-events:none}
-.hero-orb2{position:absolute;bottom:-20%;left:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,0.09) 0%,transparent 60%);pointer-events:none}
-
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(79,110,247,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(79,110,247,0.03) 1px,transparent 1px);background-size:64px 64px}
+.hero-orb1{position:absolute;top:-15%;right:-8%;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(79,110,247,0.12) 0%,transparent 60%);pointer-events:none}
+.hero-orb2{position:absolute;bottom:-20%;left:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,0.08) 0%,transparent 60%);pointer-events:none}
 .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center}
 
 .hero-pill{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);border:1px solid rgba(16,185,129,0.2);background:rgba(16,185,129,0.06);padding:0.32rem 0.85rem;border-radius:999px;margin-bottom:1.75rem;width:fit-content}
 .pill-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
 
-.hero-name{font-family:var(--display);font-size:clamp(3rem,5vw,5rem);font-weight:800;line-height:1.0;letter-spacing:-0.025em;color:var(--white);margin-bottom:0.5rem}
+.hero-name{font-family:var(--display);font-size:clamp(3rem,5vw,5rem);font-weight:800;line-height:1.0;letter-spacing:-0.025em;color:var(--white);margin-bottom:0.75rem}
 
-.hero-slogan{font-family:var(--display);font-size:clamp(1rem,1.8vw,1.35rem);font-weight:600;color:transparent;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;margin-bottom:1.75rem;line-height:1.3;letter-spacing:-0.01em}
+.hero-slogan{font-family:var(--display);font-size:clamp(1.05rem,1.8vw,1.3rem);font-weight:600;line-height:1.35;letter-spacing:-0.01em;margin-bottom:1.75rem;max-width:560px}
+.hero-slogan .s1{color:var(--white)}
+.hero-slogan .s2{color:transparent;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text}
 
-/* COMPANY TICKER */
-.ticker-wrap{overflow:hidden;width:100%;margin-bottom:2rem;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
-.ticker-track{display:flex;gap:0.5rem;width:max-content;animation:ticker 22s linear infinite}
-.ticker-track:hover{animation-play-state:paused}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.co-chip{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;padding:0.2rem 0.7rem;border-radius:4px;border:1px solid var(--rule);color:var(--dim);white-space:nowrap;transition:all 0.2s;cursor:default}
-.co-chip:hover{border-color:var(--accent);color:var(--accent)}
-
-.hero-desc{font-size:0.92rem;color:var(--dim);line-height:1.75;margin-bottom:2.5rem;max-width:540px}
+.hero-desc{font-size:0.9rem;color:var(--dim);line-height:1.78;margin-bottom:2.5rem;max-width:540px}
 .hero-desc strong{color:var(--white);font-weight:500}
 
 .hero-btns{display:flex;gap:0.85rem;flex-wrap:wrap}
-.btn-main{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;padding:0.8rem 1.85rem;border-radius:6px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:all 0.2s;letter-spacing:0.01em}
+.btn-main{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;padding:0.8rem 1.85rem;border-radius:6px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:all 0.2s}
 .btn-main:hover{background:#3a56d4;transform:translateY(-2px);box-shadow:0 8px 30px rgba(79,110,247,0.35)}
-.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--rule);color:var(--dim);padding:0.8rem 1.85rem;border-radius:6px;font-size:0.8rem;font-weight:400;text-decoration:none;transition:all 0.2s}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--rule);color:var(--dim);padding:0.8rem 1.85rem;border-radius:6px;font-size:0.8rem;text-decoration:none;transition:all 0.2s}
 .btn-ghost:hover{border-color:rgba(255,255,255,0.3);color:var(--white)}
 
-/* HERO RIGHT */
 .hero-right{display:flex;flex-direction:column;gap:1rem}
-.photo-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--rule);position:relative;background:linear-gradient(145deg,rgba(79,110,247,0.12),rgba(167,139,250,0.08))}
-.photo-wrap img{width:100%;height:360px;object-fit:cover;object-position:center top;display:block}
+.photo-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--rule);position:relative}
+.photo-wrap img{width:100%;height:380px;object-fit:cover;object-position:center top;display:block}
 .photo-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(6,8,16,0.7));pointer-events:none}
 .photo-overlay{position:absolute;bottom:1rem;left:1rem;z-index:2}
 .photo-overlay strong{font-family:var(--display);font-size:0.82rem;font-weight:700;color:#fff;display:block}
@@ -74,14 +65,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;d
 .stat-box .n{font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1;display:block}
 .stat-box .l{font-size:0.58rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.07em;margin-top:0.25rem;display:block}
 
-/* ── SECTIONS BASE ── */
+/* SECTIONS */
 .section{border-top:1px solid var(--rule);padding:5.5rem 3rem;position:relative;z-index:1}
 .section-inner{max-width:1280px;margin:0 auto}
 .sec-eyebrow{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
 .sec-heading{font-family:var(--display);font-size:clamp(1.7rem,2.8vw,2.6rem);font-weight:800;line-height:1.1;margin-bottom:3rem}
 .sec-heading em{font-style:italic;color:var(--accent2);font-weight:600}
 
-/* ── HOOK ── */
+/* HOOK */
 .hook-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .hook-card{background:rgba(255,255,255,0.018);border:1px solid var(--rule);border-radius:14px;padding:1.85rem;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s}
 .hook-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
@@ -92,7 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;d
 .hook-text{font-size:0.82rem;color:var(--dim);line-height:1.65}
 .hook-text strong{color:var(--white);font-weight:500}
 
-/* ── EXPERIENCE ── */
+/* EXPERIENCE */
 .exp-list{display:flex;flex-direction:column;gap:1.25rem}
 .exp-card{background:rgba(255,255,255,0.018);border:1px solid var(--rule);border-radius:14px;overflow:hidden;transition:border-color 0.3s}
 .exp-card:hover{border-color:rgba(79,110,247,0.25)}
@@ -113,8 +104,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;d
 .exp-footer{display:flex;flex-wrap:wrap;gap:0.35rem;padding:1rem 1.75rem;border-top:1px solid var(--rule);background:rgba(255,255,255,0.01)}
 .chip{font-family:var(--mono);font-size:0.58rem;padding:0.16rem 0.5rem;border-radius:3px;background:rgba(255,255,255,0.04);border:1px solid var(--rule);color:var(--dim)}
 
-/* ── SKILLS ── */
-.skills-bg{background:rgba(255,255,255,0.012)}
+/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .skill-col{background:rgba(255,255,255,0.02);border:1px solid var(--rule);border-radius:12px;padding:1.5rem}
 .skill-col-head{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--dim);margin-bottom:1.1rem}
@@ -123,44 +113,72 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;d
 .stag:hover{border-color:var(--accent);color:var(--accent)}
 .stag.hot{border-color:rgba(79,110,247,0.3);color:var(--accent);background:rgba(79,110,247,0.07)}
 
-/* ── EDUCATION ── */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.edu-card{background:rgba(255,255,255,0.018);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
-.edu-photo{width:100%;height:220px;object-fit:cover;object-position:center top;display:block;border-bottom:1px solid var(--rule)}
-.edu-body{padding:1.5rem}
-.edu-school{font-family:var(--display);font-size:1rem;font-weight:800;color:var(--white);margin-bottom:0.2rem}
-.edu-degree{font-size:0.82rem;color:var(--accent);margin-bottom:0.5rem;font-weight:500}
-.edu-detail{font-size:0.78rem;color:var(--dim);line-height:1.6}
-.edu-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:1rem}
-.edu-tag{font-family:var(--mono);font-size:0.58rem;padding:0.18rem 0.55rem;border-radius:4px;background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);color:var(--accent2)}
+/* EDUCATION — two column layout */
+.edu-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
 
-/* ── CERTIFICATIONS ── */
-.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+/* left: stacked research cards */
+.research-stack{display:flex;flex-direction:column;gap:1.5rem}
+
+.research-card{border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:rgba(255,255,255,0.018);transition:border-color 0.3s}
+.research-card:hover{border-color:rgba(79,110,247,0.3)}
+
+.research-img-wrap{position:relative;overflow:hidden;cursor:pointer}
+.research-img-wrap img{width:100%;height:auto;max-height:340px;object-fit:contain;object-position:center;display:block;background:#0d1020;transition:transform 0.4s}
+.research-img-wrap:hover img{transform:scale(1.02)}
+
+.research-overlay{position:absolute;inset:0;background:rgba(6,8,16,0.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;backdrop-filter:blur(2px)}
+.research-img-wrap:hover .research-overlay{opacity:1}
+.view-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;padding:0.6rem 1.2rem;border-radius:6px;font-size:0.78rem;font-weight:600;border:none;cursor:pointer;text-decoration:none}
+
+.research-body{padding:1.25rem 1.5rem}
+.research-tag{font-family:var(--mono);font-size:0.58rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent2);background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);padding:0.15rem 0.5rem;border-radius:3px;width:fit-content;margin-bottom:0.65rem}
+.research-title{font-family:var(--display);font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.4rem;line-height:1.3}
+.research-hook{font-size:0.8rem;color:var(--dim);line-height:1.6}
+.research-hook strong{color:var(--white);font-weight:500}
+
+/* right: tableau card */
+.tableau-card{border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:rgba(255,255,255,0.018);transition:border-color 0.3s;height:fit-content}
+.tableau-card:hover{border-color:rgba(79,110,247,0.3)}
+.tableau-img-wrap{position:relative;overflow:hidden;cursor:pointer}
+.tableau-img-wrap img{width:100%;height:auto;object-fit:contain;display:block;background:#f8f8f0}
+.tableau-img-wrap:hover img{transform:scale(1.01)}
+.tableau-overlay{position:absolute;inset:0;background:rgba(6,8,16,0.65);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;backdrop-filter:blur(2px)}
+.tableau-img-wrap:hover .tableau-overlay{opacity:1}
+.tableau-body{padding:1.25rem 1.5rem}
+.tableau-tag{font-family:var(--mono);font-size:0.58rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);padding:0.15rem 0.5rem;border-radius:3px;width:fit-content;margin-bottom:0.65rem}
+.tableau-title{font-family:var(--display);font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.4rem;line-height:1.3}
+.tableau-hook{font-size:0.8rem;color:var(--dim);line-height:1.6;margin-bottom:1rem}
+.tableau-hook strong{color:var(--white);font-weight:500}
+.tableau-impacts{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem}
+.t-chip{font-family:var(--mono);font-size:0.6rem;font-weight:600;padding:0.18rem 0.5rem;border-radius:3px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--green)}
+.gh-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--accent);text-decoration:none;font-weight:500;transition:gap 0.2s}
+.gh-link:hover{gap:0.7rem}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
 .cert-card{background:rgba(255,255,255,0.018);border:1px solid var(--rule);border-radius:14px;padding:1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:border-color 0.3s,transform 0.2s}
 .cert-card:hover{border-color:rgba(79,110,247,0.3);transform:translateY(-2px)}
-.cert-icon{width:54px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem}
+.cert-icon{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cert-icon.blue{background:rgba(79,110,247,0.12);border:1px solid rgba(79,110,247,0.2)}
 .cert-icon.green{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2)}
 .cert-name{font-family:var(--display);font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.3rem;line-height:1.3}
 .cert-issuer{font-size:0.75rem;color:var(--dim);margin-bottom:0.5rem}
 .cert-meta{font-family:var(--mono);font-size:0.6rem;color:var(--accent);letter-spacing:0.05em}
 
-/* ── PROJECTS ── */
-.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.proj-card{background:rgba(255,255,255,0.018);border:1px solid var(--rule);border-radius:14px;overflow:hidden;transition:border-color 0.3s,transform 0.25s}
+/* PROJECTS — no images, outcome-focused */
+.proj-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.proj-card{background:rgba(255,255,255,0.018);border:1px solid var(--rule);border-radius:14px;padding:1.85rem;transition:border-color 0.3s,transform 0.25s;display:flex;flex-direction:column;gap:0.75rem}
 .proj-card:hover{border-color:rgba(79,110,247,0.3);transform:translateY(-3px)}
-.proj-img{width:100%;height:200px;object-fit:cover;object-position:center top;display:block;border-bottom:1px solid var(--rule)}
-.proj-img-placeholder{width:100%;height:200px;background:linear-gradient(135deg,rgba(79,110,247,0.12),rgba(167,139,250,0.08));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--rule)}
-.proj-body{padding:1.5rem}
-.proj-tag{font-family:var(--mono);font-size:0.58rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:rgba(79,110,247,0.1);padding:0.16rem 0.55rem;border-radius:3px;width:fit-content;margin-bottom:0.65rem}
-.proj-title{font-family:var(--display);font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.4rem;line-height:1.3}
-.proj-desc{font-size:0.8rem;color:var(--dim);line-height:1.6;margin-bottom:1rem}
-.proj-chips{display:flex;flex-wrap:wrap;gap:0.35rem}
-.proj-chip{font-family:var(--mono);font-size:0.6rem;font-weight:600;padding:0.18rem 0.5rem;border-radius:3px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--green)}
-.proj-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--accent);text-decoration:none;margin-top:0.75rem;font-weight:500;transition:gap 0.2s}
-.proj-link:hover{gap:0.6rem}
+.proj-eyebrow{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.proj-tag{font-family:var(--mono);font-size:0.58rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:rgba(79,110,247,0.1);padding:0.16rem 0.55rem;border-radius:3px}
+.proj-company{font-family:var(--mono);font-size:0.58rem;color:var(--dim);letter-spacing:0.05em}
+.proj-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--white);line-height:1.3}
+.proj-what{font-size:0.82rem;color:var(--dim);line-height:1.65}
+.proj-what strong{color:var(--white);font-weight:500}
+.proj-outcomes{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.25rem}
+.proj-outcome{font-family:var(--mono);font-size:0.62rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:3px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--green)}
 
-/* ── CONTACT ── */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start}
 .contact-big{font-family:var(--display);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1.25rem}
 .contact-big em{font-style:italic;color:transparent;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;font-weight:600}
@@ -178,17 +196,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 3rem;height:58px;d
 footer{border-top:1px solid var(--rule);padding:1.35rem 3rem;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
 footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spacing:0.04em}
 
-/* REVEAL */
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(8px)}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.lightbox-close:hover{background:rgba(255,255,255,0.2)}
+
 .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* RESPONSIVE */
 @media(max-width:1100px){
   .hero-inner,.contact-grid{grid-template-columns:1fr}
   .hero-right{flex-direction:row;gap:1rem}
   .hook-grid{grid-template-columns:1fr 1fr}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .edu-grid,.cert-grid,.proj-grid{grid-template-columns:1fr}
+  .edu-layout{grid-template-columns:1fr}
+  .cert-grid,.proj-list{grid-template-columns:1fr}
   nav{padding:0 1.5rem}
   .section,.hero{padding-left:1.5rem;padding-right:1.5rem}
   footer{padding:1.25rem 1.5rem}
@@ -197,12 +221,17 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
   .hero-right{flex-direction:column}
   .hook-grid{grid-template-columns:1fr}
   .nav-links{display:none}
-  .stats-row{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 <div class="glow" id="glow"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -218,26 +247,20 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
   <a href="Sindhuja_Maheswaran_Resume.pdf" class="nav-cta" download>Resume</a>
 </nav>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-orb1"></div>
   <div class="hero-orb2"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-pill"><span class="pill-dot"></span>Open to new opportunities &mdash; H1B Sponsorship</div>
+      <div class="hero-pill"><span class="pill-dot"></span>Open to new opportunities</div>
       <h1 class="hero-name">Sindhuja Maheswaran</h1>
-      <p class="hero-slogan">I don't report numbers. I change them.</p>
-
-      <div class="ticker-wrap">
-        <div class="ticker-track">
-          <span class="co-chip">Amazon</span><span class="co-chip">Microsoft</span><span class="co-chip">UnitedHealth Group</span><span class="co-chip">Walmart</span><span class="co-chip">Deloitte</span><span class="co-chip">EY</span><span class="co-chip">Salesforce</span><span class="co-chip">Cigna</span><span class="co-chip">Fidelity</span><span class="co-chip">Meta</span><span class="co-chip">JPMorgan Chase</span><span class="co-chip">TikTok</span>
-          <span class="co-chip">Amazon</span><span class="co-chip">Microsoft</span><span class="co-chip">UnitedHealth Group</span><span class="co-chip">Walmart</span><span class="co-chip">Deloitte</span><span class="co-chip">EY</span><span class="co-chip">Salesforce</span><span class="co-chip">Cigna</span><span class="co-chip">Fidelity</span><span class="co-chip">Meta</span><span class="co-chip">JPMorgan Chase</span><span class="co-chip">TikTok</span>
-        </div>
-      </div>
-
+      <p class="hero-slogan">
+        <span class="s1">Six years finding the signal in the noise —</span><br>
+        <span class="s2">before anyone else calls it a problem.</span>
+      </p>
       <p class="hero-desc">Strategic Finance professional who found <strong>$420K in forecast gaps nobody caught</strong>, built frameworks across an <strong>$11.3B multi-marketplace portfolio</strong>, and turned raw Walmart channel data into <strong>17% revenue growth</strong>. 6+ years. 18+ M&amp;A deals. One mission: finance that drives the business.</p>
-
       <div class="hero-btns">
         <a href="#contact" class="btn-main">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -249,7 +272,6 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
         </a>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="photo-wrap">
         <img src="./photo.jpg" alt="Sindhuja Maheswaran"/>
@@ -267,7 +289,7 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
   </div>
 </section>
 
-<!-- ══ STORY / HOOK ══ -->
+<!-- STORY -->
 <section class="section" id="story">
   <div class="section-inner">
     <p class="sec-eyebrow">What makes me different</p>
@@ -280,19 +302,19 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
       </div>
       <div class="hook-card reveal">
         <span class="hook-num">17%</span>
-        <h3 class="hook-title">One reframe. One channel. Massive growth.</h3>
-        <p class="hook-text">At NYDEC, digital license sales data sat untouched in a portal. I extracted it, modeled the demand curve, and found the pricing gap. Result: <strong>17% Walmart channel revenue growth and a 4.5% lift in license value</strong> from one analytical reframe.</p>
+        <h3 class="hook-title">One reframe. One channel. Real growth.</h3>
+        <p class="hook-text">At NYDEC, digital license sales data sat untouched in a portal. I extracted it, modeled the demand curve, found the pricing gap. Result: <strong>17% Walmart channel revenue growth and a 4.5% lift in license value</strong> from one analytical reframe.</p>
       </div>
       <div class="hook-card reveal">
         <span class="hook-num">18+</span>
         <h3 class="hook-title">Finance that ships decisions, not decks</h3>
-        <p class="hook-text">Across 18+ M&amp;A transactions I learned: <strong>a model is useless if it doesn't move a decision</strong>. I've sat in deal rooms, defended assumptions, and built infrastructure that cut reporting time by 60%. Finance that sits in spreadsheets isn't finance. It's filing.</p>
+        <p class="hook-text">Across 18+ M&amp;A transactions: <strong>a model is useless if it doesn't move a decision</strong>. I've sat in deal rooms, defended assumptions, and built infrastructure that cut reporting time 60%. Finance that sits in spreadsheets isn't finance. It's filing.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ EXPERIENCE ══ -->
+<!-- EXPERIENCE -->
 <section class="section" id="experience">
   <div class="section-inner">
     <p class="sec-eyebrow">Career</p>
@@ -301,14 +323,8 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
 
       <div class="exp-card reveal">
         <div class="exp-head">
-          <div>
-            <p class="exp-co">DaVita</p>
-            <p class="exp-role">Sr. Financial Analyst &mdash; Revenue Analytics</p>
-          </div>
-          <div class="exp-right">
-            <span class="exp-period">Mar 2026 &mdash; Present</span>
-            <span class="badge bg">Current</span>
-          </div>
+          <div><p class="exp-co">DaVita</p><p class="exp-role">Sr. Financial Analyst — Revenue Analytics</p></div>
+          <div class="exp-right"><span class="exp-period">Mar 2026 — Present</span><span class="badge bg">Current</span></div>
         </div>
         <div class="exp-body">
           <ul class="exp-bullets">
@@ -325,14 +341,8 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
 
       <div class="exp-card reveal">
         <div class="exp-head">
-          <div>
-            <p class="exp-co">NYDEC</p>
-            <p class="exp-role">Business System Analyst &mdash; Finance Data Management</p>
-          </div>
-          <div class="exp-right">
-            <span class="exp-period">Apr 2025 &mdash; Feb 2026</span>
-            <span class="badge bb">Digital Analytics</span>
-          </div>
+          <div><p class="exp-co">NYDEC</p><p class="exp-role">Business System Analyst — Finance Data Management</p></div>
+          <div class="exp-right"><span class="exp-period">Apr 2025 — Feb 2026</span><span class="badge bb">Digital Analytics</span></div>
         </div>
         <div class="exp-body">
           <ul class="exp-bullets">
@@ -349,14 +359,8 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
 
       <div class="exp-card reveal">
         <div class="exp-head">
-          <div>
-            <p class="exp-co">7FinCorp Group</p>
-            <p class="exp-role">Sr. Financial Analyst &mdash; Investment Banking Advisory</p>
-          </div>
-          <div class="exp-right">
-            <span class="exp-period">Oct 2018 &mdash; Jul 2022</span>
-            <span class="badge bp">IB Advisory</span>
-          </div>
+          <div><p class="exp-co">7FinCorp Group</p><p class="exp-role">Sr. Financial Analyst — Investment Banking Advisory</p></div>
+          <div class="exp-right"><span class="exp-period">Oct 2018 — Jul 2022</span><span class="badge bp">IB Advisory</span></div>
         </div>
         <div class="exp-body">
           <ul class="exp-bullets">
@@ -374,8 +378,8 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
   </div>
 </section>
 
-<!-- ══ SKILLS ══ -->
-<section class="section skills-bg" id="skills">
+<!-- SKILLS -->
+<section class="section" id="skills">
   <div class="section-inner">
     <p class="sec-eyebrow">Technical Stack</p>
     <h2 class="sec-heading">Tools I work in daily</h2>
@@ -383,13 +387,13 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
       <div class="skill-col reveal">
         <p class="skill-col-head">Analytics &amp; Code</p>
         <div class="skill-tags">
-          <span class="stag hot">SQL</span><span class="stag hot">Python</span><span class="stag hot">Excel (Advanced)</span><span class="stag">Tableau</span><span class="stag">Power BI</span><span class="stag">VBA</span><span class="stag">R</span>
+          <span class="stag hot">SQL</span><span class="stag hot">Python</span><span class="stag hot">Excel (Advanced)</span><span class="stag">Tableau</span><span class="stag">Power BI</span><span class="stag">VBA</span>
         </div>
       </div>
       <div class="skill-col reveal">
         <p class="skill-col-head">Finance &amp; Strategy</p>
         <div class="skill-tags">
-          <span class="stag hot">Revenue Forecasting</span><span class="stag hot">M&amp;A Modeling</span><span class="stag">Pricing Strategy</span><span class="stag">Demand Planning</span><span class="stag">Unit Economics</span><span class="stag">DCF / Valuation</span><span class="stag">LRP</span>
+          <span class="stag hot">Revenue Forecasting</span><span class="stag hot">M&amp;A Modeling</span><span class="stag">Pricing Strategy</span><span class="stag">Demand Planning</span><span class="stag">Unit Economics</span><span class="stag">DCF / Valuation</span>
         </div>
       </div>
       <div class="skill-col reveal">
@@ -408,40 +412,86 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
   </div>
 </section>
 
-<!-- ══ EDUCATION & CERTIFICATIONS ══ -->
+<!-- EDUCATION & RESEARCH -->
 <section class="section" id="education">
   <div class="section-inner">
-    <p class="sec-eyebrow">Education &amp; Certifications</p>
-    <h2 class="sec-heading">Built for the <em>intersection</em> of finance and data</h2>
+    <p class="sec-eyebrow">Education &amp; Research</p>
+    <h2 class="sec-heading">MS Applied Data Science — <em>Syracuse University</em></h2>
 
-    <div class="edu-grid" style="margin-bottom:2.5rem">
-      <div class="edu-card reveal">
-        <img src="research.jpg" alt="Sindhuja at Syracuse iSchool Nexus Technology Lab" class="edu-photo"/>
-        <div class="edu-body">
-          <p class="edu-school">Syracuse University &mdash; iSchool</p>
-          <p class="edu-degree">MS Applied Data Science &mdash; Dec 2024</p>
-          <p class="edu-detail">Data Science Research Assistant on the Nexus Technology Lab Data Science Team. Conducted applied research at the intersection of machine learning, financial analytics, and data engineering.</p>
-          <div class="edu-tags">
-            <span class="edu-tag">Nexus Technology Lab</span><span class="edu-tag">Data Science Research</span><span class="edu-tag">Machine Learning</span><span class="edu-tag">Financial Analytics</span>
+    <div class="edu-layout">
+
+      <!-- LEFT: stacked research cards -->
+      <div class="research-stack">
+
+        <div class="research-card reveal">
+          <div class="research-img-wrap" onclick="openLightbox('research.jpg')">
+            <img src="research.jpg" alt="Nexus Technology Lab — Syracuse iSchool"/>
+            <div class="research-overlay">
+              <span class="view-btn">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                View Full Image
+              </span>
+            </div>
           </div>
+          <div class="research-body">
+            <span class="research-tag">Nexus Technology Lab &mdash; iSchool</span>
+            <h3 class="research-title">Data Science Research Assistant — Movie Recommendation System using SageMaker</h3>
+            <p class="research-hook">Built a movie recommendation engine using AWS SageMaker and Matrix Factorization (SVD) on the Nexus Technology Lab team at Syracuse iSchool. <strong>Applied ML to a real-world personalization problem</strong> — the same class of problem driving product decisions at Amazon, Netflix, and Meta. Presented at the iSchool Data Science Showcase.</p>
+          </div>
+        </div>
+
+        <div class="research-card reveal">
+          <div class="research-img-wrap" onclick="openLightbox('ev-research.jpg')">
+            <img src="ev-research.jpg" alt="EV Financial Analysis Research Poster"/>
+            <div class="research-overlay">
+              <span class="view-btn">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                View Full Image
+              </span>
+            </div>
+          </div>
+          <div class="research-body">
+            <span class="research-tag">Applied Financial Research</span>
+            <h3 class="research-title">"Charging Forward" — EV Market Financial Analysis, 152K Dataset</h3>
+            <p class="research-hook">Analyzed 152,227-row BEV/PHEV dataset from Washington State DOL. <strong>Modeled MSRP distribution by make, utility market concentration, and registration growth trends</strong> to surface investment and policy insights — the same analytical lens used in corporate finance and private equity market assessments.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Tableau card -->
+      <div class="tableau-card reveal">
+        <div class="tableau-img-wrap" onclick="openLightbox('tableau.png')">
+          <img src="tableau.png" alt="Natural Disasters Economic Impact Tableau Dashboard"/>
+          <div class="tableau-overlay">
+            <span class="view-btn">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              View Full Dashboard
+            </span>
+          </div>
+        </div>
+        <div class="tableau-body">
+          <span class="tableau-tag">Tableau &mdash; Economic Analytics</span>
+          <h3 class="tableau-title">Natural Disasters &amp; Economic Impact USA 2000–2020</h3>
+          <p class="tableau-hook">Built a multi-layer Tableau dashboard mapping <strong>20 years of natural disaster data against economic damage across US counties</strong>. Identified that Extreme Weather alone caused <strong>$964B in fiscal devastation</strong> — more than Drought, Flood, and Storm combined. Modeled county-level loss concentration and year-over-year economic recovery trends to inform resource allocation decisions.</p>
+          <div class="tableau-impacts">
+            <span class="t-chip">$964B Extreme Weather Impact</span>
+            <span class="t-chip">20-Year Dataset</span>
+            <span class="t-chip">County-level Analysis</span>
+            <span class="t-chip">Budget Allocation Insights</span>
+          </div>
+          <a href="https://github.com/SindhujaMaheswaran/Visual-Exploration-of-Natural-Disasters-and-Economic-Impact-in-the-USA-2000---2020" target="_blank" class="gh-link">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
       </div>
 
-      <div class="edu-card reveal">
-        <img src="ev-research.jpg" alt="Electric Vehicle Financial Analysis Research" class="edu-photo"/>
-        <div class="edu-body">
-          <p class="edu-school">Applied Research &mdash; iSchool Syracuse</p>
-          <p class="edu-degree">EV Financial Analysis &amp; Data Visualization</p>
-          <p class="edu-detail">"Charging Forward: The Electric Vehicle Revolution in the USA" — 152,227-row dataset analysis of BEV/PHEV distribution, MSRP trends, and utility market concentration across Washington State DOL data. Presented at iSchool Data Science Showcase.</p>
-          <div class="edu-tags">
-            <span class="edu-tag">152K+ Data Points</span><span class="edu-tag">Financial Modeling</span><span class="edu-tag">Tableau</span><span class="edu-tag">EV Market</span>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- CERTIFICATIONS -->
-    <p class="sec-eyebrow" style="margin-bottom:1rem">Certifications</p>
+    <p class="sec-eyebrow" style="margin-top:4rem;margin-bottom:1rem">Certifications</p>
     <div class="cert-grid">
       <div class="cert-card reveal">
         <div class="cert-icon blue">
@@ -449,7 +499,7 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
         </div>
         <div>
           <p class="cert-name">Alteryx Designer Core</p>
-          <p class="cert-issuer">Alteryx &mdash; Certificate of Achievement</p>
+          <p class="cert-issuer">Alteryx — Certificate of Achievement</p>
           <p class="cert-meta">Issued Jan 2025 &nbsp;&middot;&nbsp; Expires Jan 2027</p>
         </div>
       </div>
@@ -464,63 +514,62 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ══ PROJECTS ══ -->
+<!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-inner">
-    <p class="sec-eyebrow">Selected Work</p>
-    <h2 class="sec-heading">Projects &amp; <em>Impact</em></h2>
-    <div class="proj-grid">
+    <p class="sec-eyebrow">Work that moved the needle</p>
+    <h2 class="sec-heading">Projects that <em>changed real numbers</em></h2>
+    <div class="proj-list">
 
       <div class="proj-card reveal">
-        <div class="proj-img-placeholder">
-          <svg width="48" height="48" fill="none" stroke="rgba(79,110,247,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-        </div>
-        <div class="proj-body">
+        <div class="proj-eyebrow">
           <span class="proj-tag">Forecasting</span>
-          <h3 class="proj-title">$11.3B Multi-Marketplace Forecasting Framework</h3>
-          <p class="proj-desc">Built long-term forecasting models across 5 healthcare marketplace plans at DaVita. Converted enrollment trends and utilization benchmarks into financial targets operational teams execute against.</p>
-          <div class="proj-chips"><span class="proj-chip">$11.3B Portfolio</span><span class="proj-chip">$420K Variance Found</span><span class="proj-chip">5 Marketplaces</span></div>
+          <span class="proj-company">DaVita</span>
+        </div>
+        <h3 class="proj-title">$11.3B Multi-Marketplace Forecasting Framework</h3>
+        <p class="proj-what">Built the long-range forecasting engine across 5 healthcare marketplace plans. Converted regional market rates, enrollment trends, and utilization benchmarks into financial targets that operational teams actually executed against. When actual results diverged, I was the one who found the <strong>$420K gap, traced it to enrollment behavior, and rebuilt the model</strong> — not just flagged it.</p>
+        <div class="proj-outcomes">
+          <span class="proj-outcome">$11.3B Portfolio</span><span class="proj-outcome">$420K Variance Caught</span><span class="proj-outcome">$1.4M Funding Influenced</span><span class="proj-outcome">5 Marketplaces</span>
         </div>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-img-placeholder">
-          <svg width="48" height="48" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div class="proj-body">
+        <div class="proj-eyebrow">
           <span class="proj-tag">Revenue Analytics</span>
-          <h3 class="proj-title">Walmart Channel Demand &amp; Pricing Analysis</h3>
-          <p class="proj-desc">Extracted digital license sales data at NYDEC, modeled pricing curves and demand patterns. Identified underpriced segments and informed the channel strategy that drove significant growth.</p>
-          <div class="proj-chips"><span class="proj-chip">17% Revenue Growth</span><span class="proj-chip">4.5% License Value Lift</span></div>
+          <span class="proj-company">NYDEC</span>
+        </div>
+        <h3 class="proj-title">Walmart Channel Pricing &amp; Demand Reframe</h3>
+        <p class="proj-what">Digital license sales data sat untouched in a portal. I extracted it, modeled the full demand curve using Python and Excel, and found where pricing was leaving money on the table. One analytical reframe: <strong>17% Walmart channel revenue growth and a 4.5% lift in license value</strong>. The data was always there. The insight wasn't.</p>
+        <div class="proj-outcomes">
+          <span class="proj-outcome">17% Revenue Growth</span><span class="proj-outcome">4.5% License Value Lift</span><span class="proj-outcome">Python + Excel</span>
         </div>
       </div>
 
       <div class="proj-card reveal">
-        <img src="ev-research.jpg" alt="EV Financial Analysis" class="proj-img"/>
-        <div class="proj-body">
-          <span class="proj-tag">Data Analytics &mdash; Finance</span>
-          <h3 class="proj-title">EV Market Financial Analysis &mdash; 152K Dataset</h3>
-          <p class="proj-desc">"Charging Forward": Analyzed 152,227-row BEV/PHEV dataset from Washington State DOL. Modeled MSRP distribution by make, EV utility market concentration, and registration growth trends to inform investment and policy decisions.</p>
-          <div class="proj-chips"><span class="proj-chip">152K+ Records</span><span class="proj-chip">Financial Modeling</span><span class="proj-chip">Tableau</span><span class="proj-chip">Market Analysis</span></div>
+        <div class="proj-eyebrow">
+          <span class="proj-tag">Automation</span>
+          <span class="proj-company">NYDEC</span>
+        </div>
+        <h3 class="proj-title">Finance Reporting Automation — 85% Effort Eliminated</h3>
+        <p class="proj-what">Quarterly close was a manual, error-prone grind across 5 business units. I redesigned it from scratch using Python and VBA pipelines, eliminating the consolidation bottleneck entirely. <strong>85% reduction in close effort</strong> freed the finance team to focus on analysis instead of assembly. Delivered 15+ business cases in the same period.</p>
+        <div class="proj-outcomes">
+          <span class="proj-outcome">85% Effort Reduction</span><span class="proj-outcome">5 Business Units</span><span class="proj-outcome">15+ Business Cases</span><span class="proj-outcome">20% Faster Delivery</span>
         </div>
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-img-placeholder">
-          <svg width="48" height="48" fill="none" stroke="rgba(16,185,129,0.4)" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="proj-eyebrow">
+          <span class="proj-tag">M&amp;A Analytics</span>
+          <span class="proj-company">7FinCorp Group</span>
         </div>
-        <div class="proj-body">
-          <span class="proj-tag">Tableau &mdash; Economic Analytics</span>
-          <h3 class="proj-title">Natural Disasters &amp; Economic Impact USA 2000&ndash;2020</h3>
-          <p class="proj-desc">Visual exploration of 20 years of natural disaster data and their economic impact across US regions. Built Tableau dashboards revealing correlation between disaster frequency, FEMA budget allocation, and regional economic recovery timelines.</p>
-          <div class="proj-chips"><span class="proj-chip">20-Year Dataset</span><span class="proj-chip">Tableau</span><span class="proj-chip">Economic Impact</span><span class="proj-chip">Budget Analytics</span></div>
-          <a href="https://github.com/SindhujaMaheswaran/Visual-Exploration-of-Natural-Disasters-and-Economic-Impact-in-the-USA-2000---2020" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+        <h3 class="proj-title">18+ M&amp;A Deal Modeling &amp; Revenue Infrastructure</h3>
+        <p class="proj-what">Led financial modeling across 18+ M&amp;A and ECM transactions contributing to <strong>$3M in executed revenue</strong>. Beyond the models, I identified <strong>$150K in unrecovered vendor costs</strong> hiding across 18 mandates — the kind of number that only surfaces when someone is looking at unit economics, not just deal flow. Built the SQL and Power BI infrastructure that cut reporting time 60%.</p>
+        <div class="proj-outcomes">
+          <span class="proj-outcome">$3M Revenue</span><span class="proj-outcome">$150K Cost Recovery</span><span class="proj-outcome">60% Reporting Cut</span><span class="proj-outcome">18+ Deals</span>
         </div>
       </div>
 
@@ -528,13 +577,13 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
+<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="section-inner">
     <div class="contact-grid">
       <div>
         <h2 class="contact-big">Ready to make<br><em>numbers move.</em></h2>
-        <p class="contact-sub">Open to Finance Business Partner, Operations Finance, and Revenue Analytics roles at high-growth tech, healthcare, and financial services companies. H1B sponsorship required. Open to relocation across the US.</p>
+        <p class="contact-sub">Open to Finance Business Partner, Operations Finance, and Revenue Analytics roles at Amazon, Meta, JPMorgan, TikTok, PayPal, Mastercard, Visa, Intuit, and Adobe. Open to relocation across the US.</p>
         <div class="c-links">
           <a href="mailto:sindhuja.maheswaran2211@gmail.com" class="c-link">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -550,7 +599,7 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
           </a>
           <a href="Sindhuja_Maheswaran_Resume.pdf" class="c-link" download>
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Resume &mdash; Sindhuja Maheswaran
+            Download Resume — Sindhuja Maheswaran
           </a>
         </div>
       </div>
@@ -560,11 +609,10 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
           <div class="open-item"><span class="od og"></span>Finance Business Partner</div>
           <div class="open-item"><span class="od og"></span>Operations Finance Analyst</div>
           <div class="open-item"><span class="od og"></span>Revenue Analytics / Strategic FP&amp;A</div>
-          <div class="open-item"><span class="od og"></span>Strategy &amp; Analytics tracks</div>
-          <div class="open-item"><span class="od ob"></span>Seattle &nbsp;&middot;&nbsp; NYC &nbsp;&middot;&nbsp; Dallas &nbsp;&middot;&nbsp; Chicago</div>
-          <div class="open-item"><span class="od ob"></span>Open to relocation across the US</div>
-          <div class="open-item"><span class="od oa"></span>H1B Sponsorship required</div>
-          <div class="open-item"><span class="od oa"></span>MS Applied Data Science &mdash; Syracuse</div>
+          <div class="open-item"><span class="od og"></span>Strategy &amp; Analytics</div>
+          <div class="open-item"><span class="od ob"></span>Amazon &nbsp;&middot;&nbsp; Meta &nbsp;&middot;&nbsp; JPMorgan &nbsp;&middot;&nbsp; TikTok</div>
+          <div class="open-item"><span class="od ob"></span>PayPal &nbsp;&middot;&nbsp; Mastercard &nbsp;&middot;&nbsp; Visa &nbsp;&middot;&nbsp; Intuit &nbsp;&middot;&nbsp; Adobe</div>
+          <div class="open-item"><span class="od oa"></span>MS Applied Data Science — Syracuse</div>
           <div class="open-item"><span class="od oa"></span>Lean Six Sigma Black Belt</div>
           <div class="open-item"><span class="od oa"></span>Alteryx Designer Core Certified</div>
         </div>
@@ -574,22 +622,29 @@ footer span{font-family:var(--mono);font-size:0.6rem;color:var(--dim);letter-spa
 </section>
 
 <footer>
-  <span>Sindhuja Maheswaran &mdash; Strategic Finance &amp; Analytics</span>
-  <span>Albany, NY &mdash; Open to Relocation &mdash; H1B Sponsorship</span>
+  <span>Sindhuja Maheswaran — Strategic Finance &amp; Analytics</span>
+  <span>Albany, NY — Open to Relocation</span>
 </footer>
 
 <script>
-// Cursor glow
 const g = document.getElementById('glow');
 document.addEventListener('mousemove', e => { g.style.left=e.clientX+'px'; g.style.top=e.clientY+'px'; });
 
-// Scroll reveal with stagger
 const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if(e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 75);
-  });
-}, {threshold: 0.07});
+  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('in'), i*75); });
+}, {threshold:0.07});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
 </script>
 </body>
 </html>
